@@ -12,5 +12,6 @@ private:
     int indeks(int x, int y) const;
 
 public:
+    macierz(int n);
 
 };
