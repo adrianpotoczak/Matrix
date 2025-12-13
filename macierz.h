@@ -13,5 +13,6 @@ private:
 
 public:
     macierz(int n);
+    macierz(macierz& m);
 
 };
