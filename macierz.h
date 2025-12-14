@@ -1,5 +1,5 @@
 #include <iostream>
-#include <memory>   
+#include <memory>    
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
@@ -14,5 +14,7 @@ private:
 public:
     macierz(int n);
     macierz(macierz& m);
-
+    macierz& alokuj(int n);
+    int pokaz(int x, int y);
+    friend std::ostream& operator<<(std::ostream& o, const macierz& m);
 };

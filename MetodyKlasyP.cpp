@@ -25,3 +25,32 @@ macierz::macierz(macierz& m) : n(m.n) {
         dane = nullptr;
     }
 }
+
+macierz& macierz::alokuj(int n) {
+    this->n = n;
+    if (n > 0) {
+        dane = std::make_unique<int[]>(n * n);
+    }
+    else {
+        this->n = 0;
+        dane = nullptr;
+    }
+    return *this;
+}
+
+int macierz::pokaz(int x, int y) {
+    if (x >= 0 && x < n && y >= 0 && y < n) {
+        return dane[indeks(x, y)];
+    }
+    return 0;
+}
+
+std::ostream& operator<<(std::ostream& o, const macierz& m) {
+    for (int i = 0; i < m.n; i++) {
+        for (int j = 0; j < m.n; j++) {
+            o << m.dane[i * m.n + j] << " ";
+        }
+        o << std::endl;
+    }
+    return o;
+}
