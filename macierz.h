@@ -16,5 +16,8 @@ public:
     macierz(macierz& m);
     macierz& alokuj(int n);
     int pokaz(int x, int y);
+    macierz& losuj();
+	macierz& diagonalna(int* t);
+
     friend std::ostream& operator<<(std::ostream& o, const macierz& m);
 };

@@ -1,4 +1,5 @@
 #include "macierz.h"
+#include <cstdlib>
 
 int macierz::indeks(int x, int y) const {
     return x * n + y;
@@ -43,6 +44,27 @@ int macierz::pokaz(int x, int y) {
         return dane[indeks(x, y)];
     }
     return 0;
+}
+
+macierz& macierz::losuj() {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] = std::rand() % 10;
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::diagonalna(int* t) {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] = 0;
+        }
+        for (int i = 0; i < n; i++) {
+            dane[indeks(i, i)] = t[i];
+        }
+    }
+    return *this;
 }
 
 std::ostream& operator<<(std::ostream& o, const macierz& m) {
