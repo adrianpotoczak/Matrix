@@ -12,6 +12,7 @@ private:
     int indeks(int x, int y) const;
 
 public:
+
     macierz(void);
     macierz(int n, int* t);
     ~macierz(void);
