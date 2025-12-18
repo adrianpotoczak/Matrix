@@ -6,7 +6,8 @@
 using namespace std;
 
 int main() {
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
+
     cout << "Konstruktor macierz(int n) - tworzenie macierzy 2x2:" << endl;
     macierz m1(2);
     cout << m1;
@@ -36,6 +37,15 @@ int main() {
     cout << "Metoda pokaz(int x, int y) - proba pobrania spoza zakresu [100][100] (zabezpieczenie):" << endl;
     int blad = m1.pokaz(100, 100);
     cout << blad << endl;
+
+    cout << "Metoda przekatna() - macierz jednostkowa:" << endl;
+    m1.przekatna();
+    cout << m1;
+
+    cout << "Metoda kolumna(int x, int* t) - wstawienie danych do kolumny o indeksie 2:" << endl;
+    int daneKolumny[] = { 9, 9, 9, 9, 9 };
+    m1.kolumna(2, daneKolumny);
+    cout << m1;
 
     return 0;
 }

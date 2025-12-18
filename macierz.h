@@ -18,6 +18,8 @@ public:
     int pokaz(int x, int y);
     macierz& losuj();
 	macierz& diagonalna(int* t);
+    macierz& kolumna(int x, int* t);
+    macierz& przekatna();
 
     friend std::ostream& operator<<(std::ostream& o, const macierz& m);
 };

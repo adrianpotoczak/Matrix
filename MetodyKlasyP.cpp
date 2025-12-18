@@ -67,6 +67,27 @@ macierz& macierz::diagonalna(int* t) {
     return *this;
 }
 
+macierz& macierz::kolumna(int x, int* t) {
+    if (n > 0 && dane != nullptr && x >= 0 && x < n) {
+        for (int i = 0; i < n; i++) {
+            dane[indeks(i, x)] = t[i];
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::przekatna() {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] = 0;
+        }
+        for (int i = 0; i < n; i++) {
+            dane[indeks(i, i)] = 1;
+        }
+    }
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& o, const macierz& m) {
     for (int i = 0; i < m.n; i++) {
         for (int j = 0; j < m.n; j++) {
