@@ -1,5 +1,5 @@
 #include <iostream>
-#include <memory>    
+#include <memory>
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
@@ -17,9 +17,10 @@ public:
     macierz& alokuj(int n);
     int pokaz(int x, int y);
     macierz& losuj();
-	macierz& diagonalna(int* t);
+    macierz& diagonalna(int* t);
     macierz& kolumna(int x, int* t);
     macierz& przekatna();
-
+    macierz& nad_przekatna();
+    macierz& operator+(macierz& m);
     friend std::ostream& operator<<(std::ostream& o, const macierz& m);
 };

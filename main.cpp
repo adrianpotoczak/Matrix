@@ -12,7 +12,7 @@ int main() {
     macierz m1(2);
     cout << m1;
 
-    cout << "--- 3. Test konstruktora kopiujacego: macierz m2(m1) ---" << endl;
+    cout << "Test konstruktora kopiujacego: macierz m2(m1)" << endl;
     macierz m2(m1);
     cout << "Oryginal (m1):" << endl << m1;
     cout << "Kopia (m2):" << endl << m2;
@@ -45,6 +45,20 @@ int main() {
     cout << "Metoda kolumna(int x, int* t) - wstawienie danych do kolumny o indeksie 2:" << endl;
     int daneKolumny[] = { 9, 9, 9, 9, 9 };
     m1.kolumna(2, daneKolumny);
+    cout << m1;
+
+    cout << "Metoda nad_przekatna() - 1 nad przekatna, 0 reszta:" << endl;
+    m1.nad_przekatna();
+    cout << m1;
+
+    cout << "Tworzenie macierzy m3 (5x5) do dodawania:" << endl;
+    macierz m3(5);
+    int t2[] = { 1, 1, 1, 1, 1 };
+    m3.diagonalna(t2);
+    cout << m3;
+
+    cout << "Operator+ (dodawanie m3 do m1):" << endl;
+    m1 + m3;
     cout << m1;
 
     return 0;

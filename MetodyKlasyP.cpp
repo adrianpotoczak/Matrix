@@ -88,6 +88,33 @@ macierz& macierz::przekatna() {
     return *this;
 }
 
+
+
+macierz& macierz::nad_przekatna() {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j > i) {
+                    dane[indeks(i, j)] = 1;
+                }
+                else {
+                    dane[indeks(i, j)] = 0;
+                }
+            }
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::operator+(macierz& m) {
+    if (n > 0 && dane != nullptr && m.n == n) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] += m.dane[i];
+        }
+    }
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& o, const macierz& m) {
     for (int i = 0; i < m.n; i++) {
         for (int j = 0; j < m.n; j++) {
@@ -97,3 +124,4 @@ std::ostream& operator<<(std::ostream& o, const macierz& m) {
     }
     return o;
 }
+
