@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 #include "macierz.h"
-
-using namespace std;
 
 int main() {
 
