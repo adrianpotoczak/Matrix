@@ -22,5 +22,12 @@ public:
     macierz& przekatna();
     macierz& nad_przekatna();
     macierz& operator+(macierz& m);
+    macierz& operator-(int a);
+    macierz& operator++(int);
+    macierz& operator+=(int a);
+    macierz& operator*=(int a);
+    bool operator>(const macierz& m);
+
+    friend macierz operator*(int a, macierz& m);
     friend std::ostream& operator<<(std::ostream& o, const macierz& m);
 };

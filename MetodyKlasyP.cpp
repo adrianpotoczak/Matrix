@@ -88,8 +88,6 @@ macierz& macierz::przekatna() {
     return *this;
 }
 
-
-
 macierz& macierz::nad_przekatna() {
     if (n > 0 && dane != nullptr) {
         for (int i = 0; i < n; i++) {
@@ -115,6 +113,62 @@ macierz& macierz::operator+(macierz& m) {
     return *this;
 }
 
+macierz& macierz::operator-(int a) {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] -= a;
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::operator++(int) {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i]++;
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::operator+=(int a) {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] += a;
+        }
+    }
+    return *this;
+}
+
+macierz& macierz::operator*=(int a) {
+    if (n > 0 && dane != nullptr) {
+        for (int i = 0; i < n * n; i++) {
+            dane[i] *= a;
+        }
+    }
+    return *this;
+}
+
+bool macierz::operator>(const macierz& m) {
+    if (n != m.n) return false;
+    for (int i = 0; i < n * n; i++) {
+        if (dane[i] <= m.dane[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+macierz operator*(int a, macierz& m) {
+    macierz wynik(m.n);
+    if (m.n > 0 && m.dane != nullptr) {
+        for (int i = 0; i < m.n * m.n; i++) {
+            wynik.dane[i] = m.dane[i] * a;
+        }
+    }
+    return wynik;
+}
+
 std::ostream& operator<<(std::ostream& o, const macierz& m) {
     for (int i = 0; i < m.n; i++) {
         for (int j = 0; j < m.n; j++) {
@@ -124,4 +178,3 @@ std::ostream& operator<<(std::ostream& o, const macierz& m) {
     }
     return o;
 }
-

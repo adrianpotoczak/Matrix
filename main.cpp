@@ -61,5 +61,22 @@ int main() {
     m1 + m3;
     cout << m1;
 
+
+    cout << "Operator- (odejmowanie 2 od kazdego elementu m1):" << endl;
+    m1 - 2;
+    cout << m1;
+
+    cout << "Operator++ (inkrementacja wszystkich elementow m1):" << endl;
+    m1++;
+    cout << m1;
+
+    cout << "Operator+= (dodanie 10 do kazdego elementu m1):" << endl;
+    m1 += 10;
+    cout << m1;
+
+    cout << "Operator*= (pomnozenie kazdego elementu m1 przez 2):" << endl;
+    m1 *= 2;
+    cout << m1;
+
     return 0;
 }
