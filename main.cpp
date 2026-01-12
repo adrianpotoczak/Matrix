@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -5,6 +6,11 @@
 
 using namespace std;
 
+/**
+ * @brief Punkt wejœcia programu.
+ * Inicjalizuje generator liczb losowych i wykonuje sekwencjê testów.
+ * @return 0 w przypadku poprawnego zakoñczenia programu.
+ */
 int main() {
     srand(static_cast<unsigned int>(time(NULL)));
 
@@ -78,5 +84,5 @@ int main() {
     m1 *= 2;
     cout << m1;
 
-    return 0;
+
 }

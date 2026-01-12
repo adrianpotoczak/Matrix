@@ -1,3 +1,9 @@
+/**
+ * @file metodyklasyp.cpp
+ * @brief Implementacja metod klasy macierz.
+ * * Zawiera definicje konstruktorów, metod manipulacji danymi oraz przeci¹¿onych operatorów.
+ */
+
 #include "macierz.h"
 #include <cstdlib>
 
@@ -16,7 +22,7 @@ macierz::macierz(int n) {
     }
 }
 
-macierz::macierz(macierz& m) : n(m.n) {
+macierz::macierz(const macierz& m) : n(m.n) {
     if (m.n > 0) {
         dane = std::make_unique<int[]>(n * n);
         std::copy(m.dane.get(), m.dane.get() + (n * n), dane.get());
