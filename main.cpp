@@ -1,13 +1,12 @@
 
 #include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <ctime>
 #include "macierz.h"
 
 using namespace std;
-
-/**
- * @brief Punkt wejœcia programu.
+/** * @brief Punkt wejœcia programu.
  * Inicjalizuje generator liczb losowych i wykonuje sekwencjê testów.
  * @return 0 w przypadku poprawnego zakoñczenia programu.
  */

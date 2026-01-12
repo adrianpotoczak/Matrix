@@ -126,6 +126,10 @@
     <ClInclude Include="macierz.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MetodyKlasyNiep.cpp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
